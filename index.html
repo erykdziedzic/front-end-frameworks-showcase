@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Frameworki w Sieci web</title>
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/react.production.min.js"></script>
+    <script src="./js/react-dom.production.min.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <style>
+      pre code {
+        background-color: #eee;
+        border: 1px solid #999;
+        display: block;
+        padding: 8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid justify-content-center">
+        <a class="navbar-brand text-center" href="#">Frameworki w Sieci web</a>
+      </div>
+    </nav>
+    <main class="container">
+      <table class="table table-bordered m-3">
+        <tr>
+          <th>Nazwa</th>
+          <th>Ikona</th>
+          <th>Opis</th>
+          <th>Przykładowe uzycie</th>
+        </tr>
+        <tr>
+          <td>Vue.js</td>
+          <td><img src="images/vue.svg" alt="Vue.js" /></td>
+          <td>
+            Vue.js to open-source'owy framework front-end JavaScript typu
+            model-view-viewmodel do budowania interfejsów użytkownika i
+            aplikacji typu single-page.
+          </td>
+          <td>
+            <pre>
+        <code>&lt;div id="app"&gt;
+  {{ message }}
+&lt;/div&gt;
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})</code></pre>
+            <p><b>Efekt:</b></p>
+            <div id="app">{{ message }}</div>
+            <script>
+              var app = new Vue({
+                el: "#app",
+                data: {
+                  message: "Hello Vue!",
+                },
+              });
+            </script>
+          </td>
+        </tr>
+
+        <tr>
+          <td>React.js</td>
+          <td><img src="images/react.svg" alt="React.js" /></td>
+          <td>
+            React jest darmową i open-source'ową biblioteką front-end JavaScript
+            służącą do budowania interfejsów użytkownika opartych na
+            komponentach UI. Jest utrzymywana przez Meta oraz społeczność
+            indywidualnych deweloperów i firm.
+          </td>
+          <td>
+            <pre>
+        <code>&lt;div id="like_button_container"&gt;&lt;/div&gt;
+&lt;script type="text/babel">
+  const Button = () => {
+    const [liked, setLiked] = React.useState(false);
+    if (liked) return "You liked this.";
+    return &lt;button onClick={() => setLiked(true)}>Like&lt;/button>;
+  };
+  const domContainer = document.querySelector(
+    "#like_button_container"
+  );
+  ReactDOM.render(&lt;Button />, domContainer);
+&lt;/script>
+</code></pre>
+            <p><b>Efekt:</b></p>
+            <div id="like_button_container"></div>
+            <script type="text/babel">
+              const Button = () => {
+                const [liked, setLiked] = React.useState(false);
+                if (liked) return "You liked this.";
+                return <button onClick={() => setLiked(true)}>Like</button>;
+              };
+              const domContainer = document.querySelector(
+                "#like_button_container"
+              );
+              ReactDOM.render(<Button />, domContainer);
+            </script>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Angular</td>
+          <td><img src="images/angular.svg" alt="Angular" /></td>
+          <td>
+            Angular to oparty na TypeScript darmowy i open-source'owy framework
+            aplikacji internetowych prowadzony przez Angular Team w Google oraz
+            przez społeczność osób prywatnych i korporacji. Angular jest
+            kompletnie przepisany przez ten sam zespół, który zbudował
+            AngularJS.
+          </td>
+          <td>
+            <pre><code id="angular-code"></code></pre>
+            <script>
+              const angularCode = `
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: \`
+    <!--The content below is only a placeholder and can be replaced.-->
+    <div style="text-align:center" class="content">
+      <h1>
+        Welcome to {{title}}!
+      </h1>
+      <span style="display: block">{{ title }} app is running!</span>
+      <img width="300" alt="Angular Logo" src="data:image/...">
+    </div>
+    <h2>Here are some links to help you start: </h2>
+    <ul>
+      <li>
+        <h2>
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://angular.io/tutorial"
+          >
+            Tour of Heroes
+          </a>
+        </h2>
+      </li>
+    </ul>
+    <router-outlet></router-outlet>
+  \`,
+  styles: []
+})
+export class AppComponent {
+  title = 'angular';
+}
+  `;
+              document.getElementById("angular-code").innerText = angularCode;
+            </script>
+            <p><b>Efekt:</b></p>
+            <a href="./angular/dist/static/index.html"
+              >Przykładowa strona statycznie wygenerowana przy pomocy Angular</a
+            >
+          </td>
+        </tr>
+      </table>
+      <h2 class="mt-4 text-center">Komentarz od autora</h2>
+      <p>
+        Obecnie w pracy web developera dostępne jest mnóstwo ułatwień, gotowych
+        pakietów i optymalizacji. Prawie każdy napotkany problem możemy
+        rozwiązać wyszukując go w przeglądarce. Trudności pojawiają się jednak
+        przy kożystaniu z niestablinych, lub nowych projektów. Z tego też powodu
+        z powyższego zbioru najbardziej do gustu przypada mi React autorstwa
+        Facebooka. Społeczność pracująca w nim i go rozwijająca jest ogromna. Co
+        równie ważne zapewnia on wysoką czytelność programu co można zobaczyć na
+        powyższych przykładach. <br /><br />Dzięki takim projektom jak te praca
+        Developera staje się czymś mniej zagmatwanym i niejasnym. Każdy może bez
+        problemu stworzyć własne portfolio, czy stronę-wizytówkę i zaistnieć
+        profesjonalnie w wirtualnej społeczności.
+      </p>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+      <div class="container text-center">Eryk Dziedzic</div>
+    </footer>
+  </body>
+</html>
